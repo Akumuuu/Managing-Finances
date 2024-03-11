@@ -1,3 +1,3 @@
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 
 export const Expenses = () => <Text>Hello, Expenses!</Text>;
