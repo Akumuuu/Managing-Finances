@@ -72,12 +72,13 @@ export const Add = () => {
       <KeyboardAvoidingView
         behavior="padding"
         keyboardVerticalOffset={112}
-        style={{ margin: 16, flex: 1 }}
+        style={{ margin: 16, flex: 1, alignItems: 'center' }}
       >
         <View
           style={{
             borderRadius: 11,
             overflow: 'hidden',
+            width: '100%',
           }}
         >
           <ListItem
@@ -200,6 +201,19 @@ export const Add = () => {
             }
           />
         </View>
+        <TouchableOpacity
+          style={{
+            backgroundColor: theme.colors.primary,
+            paddingHorizontal: 20,
+            paddingVertical: 13,
+            borderRadius: 10,
+            marginTop: 32,
+          }}
+        >
+          <Text style={{ color: 'white', fontWeight: '600', fontSize: 17 }}>
+            Submit exspense
+          </Text>
+        </TouchableOpacity>
       </KeyboardAvoidingView>
       <BottomSheet
         ref={sheetRef}
