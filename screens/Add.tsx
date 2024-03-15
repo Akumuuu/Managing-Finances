@@ -67,6 +67,44 @@ export const Add = () => {
     sheetRef.current?.close();
   };
 
+  const showDatePicker = () => {
+    if (Platform.OS === 'android') {
+      DateTimePickerAndroid.open({
+        value: date,
+        mode: 'date',
+        is24Hour: true,
+        maximumDate: new Date(),
+        minimumDate: new Date(
+          new Date().getFullYear() - 1,
+          new Date().getMonth(),
+          new Date().getDate()
+        ),
+        onChange: (event, selectedDate) => {
+          const currentDate = selectedDate || date;
+          setDate(currentDate);
+        },
+      });
+    } else {
+      Platform.OS === 'ios' && (
+        <DateTimePicker
+          value={date}
+          mode={'date'}
+          is24Hour={true}
+          themeVariant="dark"
+          maximumDate={new Date()}
+          minimumDate={
+            new Date(
+              new Date().getFullYear() - 1,
+              new Date().getMonth(),
+              new Date().getDate()
+            )
+          }
+          onChange={(event, newDate) => setDate(newDate)}
+        />
+      );
+    }
+  };
+
   return (
     <>
       <KeyboardAvoidingView
@@ -133,23 +171,25 @@ export const Add = () => {
           <ListItem
             label="Date"
             detail={
-              Platform.OS === 'ios' && (
-                <DateTimePicker
-                  value={date}
-                  mode={'date'}
-                  is24Hour={true}
-                  themeVariant="dark"
-                  maximumDate={new Date()}
-                  minimumDate={
-                    new Date(
-                      new Date().getFullYear() - 1,
-                      new Date().getMonth(),
-                      new Date().getDate()
-                    )
-                  }
-                  onChange={(event, newDate) => setDate(newDate)}
-                />
-              )
+              <TouchableOpacity
+                onPress={showDatePicker}
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <Text
+                  style={{
+                    color: theme.colors.primary,
+                    textTransform: 'capitalize',
+                    fontSize: 16,
+                  }}
+                >
+                  {date.toLocaleDateString()}
+                </Text>
+              </TouchableOpacity>
             }
           />
           <ListItem
