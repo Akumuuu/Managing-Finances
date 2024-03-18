@@ -89,13 +89,19 @@ export const ExpensesList = ({ groups }: Props) => (
           style={{
             borderBlockColor: theme.colors.border,
             borderBottomWidth: 2,
-            marginBottom: 12,
+            marginBottom: 8,
           }}
         />
         {expenses.map((expense) => (
           <ExpenseRow key={expense.id} expense={expense} />
         ))}
-
+        <View
+          style={{
+            borderBlockColor: theme.colors.border,
+            borderBottomWidth: 2,
+            marginBottom: 12,
+          }}
+        />
         <View
           style={{
             width: '100%',
