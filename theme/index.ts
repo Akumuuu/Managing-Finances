@@ -8,5 +8,6 @@ export const theme = {
     border: '#262629',
     notification: '#0A84FF',
     error: '#FF453A',
+    textSecondary: '#EBEBF599',
   },
 };
