@@ -72,7 +72,8 @@ export const ExpenseRow = ({ expense }: Props) => (
           color: theme.colors.textSecondary,
         }}
       >
-        {expense.date.getHours()}:{expense.date.getMinutes()}
+        {`${expense.date.getHours()}`.padStart(2, '0')}:
+        {`${expense.date.getMinutes()}`.padStart(2, '0')}
       </Text>
     </View>
   </View>
