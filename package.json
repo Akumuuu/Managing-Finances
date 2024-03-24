@@ -15,11 +15,13 @@
     "@react-navigation/native": "^6.1.15",
     "@react-navigation/native-stack": "^6.9.24",
     "@types/react": "~18.2.45",
+    "d3": "^7.9.0",
     "expo": "~50.0.11",
     "expo-status-bar": "~1.11.1",
     "expo-system-ui": "~2.9.3",
     "react": "18.2.0",
     "react-native": "0.73.4",
+    "react-native-chart-kit": "^6.12.0",
     "react-native-color-picker": "^0.6.0",
     "react-native-gesture-handler": "~2.14.0",
     "react-native-reanimated": "~3.6.2",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/d3": "^7.4.3",
     "@types/react-native": "^0.73.0"
   },
   "private": true
